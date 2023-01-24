@@ -179,7 +179,7 @@ router.put("/:item", auth.required, function(req, res, next) {
       }
 
       if (typeof req.body.item.description !== "undefined") {
-        req.item.description = req.body.item.description;
+        req.item.description ="text"; //eq.body.item.description;
       }
 
       if (typeof req.body.item.image !== "undefined") {
