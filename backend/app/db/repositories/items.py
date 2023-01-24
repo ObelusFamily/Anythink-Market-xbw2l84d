@@ -48,31 +48,31 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
         tags: Optional[Sequence[str]] = None,
     ) -> Item:
         async with self.connection.transaction():
-            headers = {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer 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',
-            }
+            # headers = {
+            #     'Content-Type': 'application/json',
+            #     'Authorization': 'Bearer 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',
+            # }
 
-            json_data = {
-                'model': 'text-davinci-003',
-                'prompt': title,
-                'max_tokens': 7,
-                'temperature': 0,
-            }
+            # json_data = {
+            #     'model': 'text-davinci-003',
+            #     'prompt': title,
+            #     'max_tokens': 7,
+            #     'temperature': 0,
+            # }
 
 
-            response = requests.post('https://api.openai.com/v1/completions', headers=headers, json=json_data)
-            # response.raise_for_status()
-            # # access JSOn content
-            # jsonResponse = response.json()
-            data = json.loads(response.text)
+            # response = requests.post('https://api.openai.com/v1/completions', headers=headers, json=json_data)
+            # # response.raise_for_status()
+            # # # access JSOn content
+            # # jsonResponse = response.json()
+            # data = json.loads(response.text)
 
             text = data["choices"][0]["text"]
             item_row = await queries.create_new_item(
                 self.connection,
                 slug=slug,
                 title=title,
-                description=f"{text}",
+                description=f"text",
                 body=body,
                 seller_username=seller.username,
                 image=image
