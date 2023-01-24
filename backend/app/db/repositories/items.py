@@ -67,7 +67,7 @@ class ItemsRepository(BaseRepository):  # noqa: WPS214
             # # jsonResponse = response.json()
             # data = json.loads(response.text)
 
-            text = data["choices"][0]["text"]
+            # text = data["choices"][0]["text"]
             item_row = await queries.create_new_item(
                 self.connection,
                 slug=slug,
