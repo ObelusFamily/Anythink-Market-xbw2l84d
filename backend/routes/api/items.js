@@ -144,7 +144,6 @@ router.post("/", auth.required, function(req, res, next) {
         return res.sendStatus(401);
       }
 
-      req.body.item.description = req.body.item.title + 'text'
       var item = new Item(req.body.item);
 
       item.seller = user;
@@ -180,7 +179,7 @@ router.put("/:item", auth.required, function(req, res, next) {
       }
 
       if (typeof req.body.item.description !== "undefined") {
-        req.item.description ="text"; //eq.body.item.description;
+        req.item.description = req.body.item.description;
       }
 
       if (typeof req.body.item.image !== "undefined") {
