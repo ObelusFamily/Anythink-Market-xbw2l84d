@@ -143,7 +143,7 @@ router.post("/", auth.required, function(req, res, next) {
       if (!user) {
         return res.sendStatus(401);
       }
-
+      item.despcrition = "dsdsf"
       var item = new Item(req.body.item);
 
       item.seller = user;
