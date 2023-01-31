@@ -17,3 +17,5 @@ The Anythink Market backend is Ruby web app written with [Ruby On Rails](https:/
 - `app/controllers` - Contains the controllers where requests are routed to their actions, where we find and manipulate our models and return them for the views to render.
 - `config` - Contains configuration files for our Rails application and for our database, along with an `initializers` folder for scripts that get run on boot.
 - `db` - Contains the migrations needed to create our database schema.
+
+
