@@ -32,7 +32,7 @@ spec:
             - name: NEW_RELIC_APP_NAME
               value: "Anythink Market"
             - name: NEW_RELIC_APPLICATION_LOGGING_FORWARDING_ENABLED
-              value: true
+              value: "true"
             - name: NEW_RELIC_LICENSE_KEY
               valueFrom:
                 secretKeyRef:
