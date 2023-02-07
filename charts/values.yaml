@@ -45,14 +45,14 @@ frontend:
       memory: 128Mi
 
 database:
-  connectionProtocol: postgresql://
-  serviceName: postgres-python
+  connectionProtocol: postgres://
+  serviceName: postgres-rails
   containerPort: 5433
   servicePort: 5432
-  databaseName: anythink-market
   replicaCount: 1
   env:
-    password: postgres
+    userName: user
+    password: password
   service:
     type: ClusterIP
     port: 80
